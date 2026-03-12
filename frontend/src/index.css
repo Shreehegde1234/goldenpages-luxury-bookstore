@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-white text-textPrimary antialiased min-h-screen flex flex-col;
+    scroll-behavior: smooth;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+
+  /* Premium Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-primary;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-secondary rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary-dark;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-secondary px-6 py-2 rounded-sm font-semibold tracking-wider hover:bg-black transition-all duration-300 shadow-luxury hover:shadow-luxury-hover hover:-translate-y-0.5 border border-transparent hover:border-secondary/30;
+  }
+  
+  .btn-outline {
+    @apply bg-transparent text-primary border border-primary px-6 py-2 rounded-sm font-semibold tracking-wider hover:bg-primary hover:text-white transition-all duration-300;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 bg-accent border border-gray-200 rounded-sm focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors;
+  }
+  
+  .card {
+    @apply bg-white border border-gray-100 p-6 rounded-sm shadow-sm hover:shadow-luxury transition-all duration-500 hover:-translate-y-1;
+  }
+}
+
+@layer utilities {
+  .text-gold-gradient {
+    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+.luxury-link {
+  @apply relative overflow-hidden inline-block;
+}
+
+.luxury-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-0 h-[1px] bg-secondary transition-all duration-500;
+}
+
+.luxury-link:hover::after {
+  @apply w-full;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
