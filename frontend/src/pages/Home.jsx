@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const { data } = await axios.get('/api/books');
+        const { data } = await axios.get('/api/books?limit=8');
         setBooks(data);
       } catch (err) {
         console.error(err);
@@ -160,7 +160,7 @@ const Home = () => {
           <div className="flex justify-center py-20"><div className="w-12 h-12 border-4 border-gray-100 border-t-secondary rounded-full animate-spin"></div></div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-16">
-            {books.slice(0, 8).map((book, index) => (
+            {books.map((book, index) => (
               <BookCard key={book._id} book={book} />
             ))}
           </div>

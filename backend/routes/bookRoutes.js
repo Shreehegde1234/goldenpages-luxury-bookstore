@@ -18,7 +18,10 @@ router.get('/', async (req, res) => {
 
     const category = req.query.category ? { category: req.query.category } : {};
 
-    const books = await Book.find({ ...keyword, ...category });
+    const limit = req.query.limit ? Number(req.query.limit) : 0;
+    const books = await Book.find({ ...keyword, ...category })
+      .sort({ createdAt: -1 })
+      .limit(limit);
     res.json(books);
   } catch (error) {
     res.status(500).json({ message: 'Server error' });
