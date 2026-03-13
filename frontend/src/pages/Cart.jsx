@@ -15,9 +15,9 @@ const Cart = () => {
 
   return (
     <div className="container mx-auto px-6 py-12 max-w-6xl">
-      <h1 className="text-4xl font-serif text-primary mb-10 border-b border-gray-200 pb-6 flex justify-between items-end">
+      <h1 className="text-2xl md:text-4xl font-serif text-primary mb-6 md:mb-10 border-b border-gray-200 pb-4 md:pb-6 flex justify-between items-end">
         <span>Shopping Bag</span>
-        <span className="text-sm font-sans font-normal uppercase tracking-widest text-gray-400">{totalItems} Items</span>
+        <span className="text-[10px] md:text-sm font-sans font-normal uppercase tracking-widest text-gray-400">{totalItems} Items</span>
       </h1>
 
       {cartItems.length === 0 ? (
@@ -45,17 +45,17 @@ const Cart = () => {
 
               {cartItems.map((item) => (
                 <div key={item.book} className="grid grid-cols-1 sm:grid-cols-12 gap-8 py-8 px-8 border-b border-gray-100 items-center last:border-0 group hover:bg-gray-50/30 transition-colors">
-                  <div className="col-span-1 sm:col-span-6 flex items-start gap-6">
-                    <div className="w-20 h-28 bg-gray-50 border border-gray-200 shadow-sm flex-shrink-0 flex items-center justify-center p-1">
+                  <div className="col-span-1 sm:col-span-6 flex items-start gap-4 md:gap-6">
+                    <div className="w-16 h-24 md:w-20 md:h-28 bg-gray-50 border border-gray-200 shadow-sm flex-shrink-0 flex items-center justify-center p-1">
                       <img src={item.image || '/placeholder.png'} alt={item.title} className="w-full h-full object-cover" />
                     </div>
                     <div className="flex flex-col pt-1">
-                      <Link to={`/book/${item.book}`} className="font-serif font-bold text-lg text-primary hover:text-secondary line-clamp-2 leading-tight mb-2 transition-colors">
+                      <Link to={`/book/${item.book}`} className="font-serif font-bold text-base md:text-lg text-primary hover:text-secondary line-clamp-2 leading-tight mb-2 transition-colors">
                         {item.title}
                       </Link>
                       <button 
                         onClick={() => removeFromCart(item.book)}
-                        className="text-gray-400 hover:text-red-500 text-xs tracking-wider uppercase flex items-center gap-1 transition-colors w-max mt-4"
+                        className="text-gray-400 hover:text-red-500 text-[10px] tracking-wider uppercase flex items-center gap-1 transition-colors w-max mt-2 md:mt-4"
                       >
                         <Trash2 size={12} /> Remove
                       </button>
@@ -106,8 +106,8 @@ const Cart = () => {
                   <span className="text-white font-bold text-sm tracking-widest uppercase">Included</span>
                 </div>
                 <div className="flex justify-between items-center border-t border-white/20 pt-6 mt-6">
-                  <span className="text-white font-serif text-xl">Estimated Total</span>
-                  <span className="text-secondary font-bold font-serif text-3xl">₹{totalPrice}</span>
+                  <span className="text-white font-serif text-lg md:text-xl">Estimated Total</span>
+                  <span className="text-secondary font-bold font-serif text-2xl md:text-3xl">₹{totalPrice}</span>
                 </div>
               </div>
 

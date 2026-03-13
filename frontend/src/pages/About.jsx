@@ -3,15 +3,15 @@ import { motion } from 'framer-motion';
 
 const About = () => {
   return (
-    <div className="container mx-auto px-6 py-32 min-h-screen">
+    <div className="container mx-auto px-6 py-16 md:py-32 min-h-screen">
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
         className="max-w-4xl mx-auto"
       >
-        <h1 className="text-5xl font-serif text-primary mb-12">The GoldenPages Legacy</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <h1 className="text-3xl md:text-5xl font-serif text-primary mb-8 md:mb-12">The GoldenPages Legacy</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div className="space-y-6 text-gray-500 leading-relaxed font-light">
             <p>
               Founded on the belief that books are not mere objects, but vessels of human experience, 

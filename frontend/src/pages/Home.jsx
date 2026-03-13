@@ -64,9 +64,9 @@ const Home = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="text-5xl md:text-8xl font-serif mb-8 leading-[1.1] text-white"
+            className="text-4xl md:text-8xl font-serif mb-8 leading-[1.2] md:leading-[1.1] text-white"
           >
-            Curators of the <br/> 
+            Curators of the <br className="hidden md:block"/> 
             <span className="text-gold-gradient italic font-normal">Exquisite Word</span>
           </motion.h1>
           
@@ -140,18 +140,18 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 py-32">
+      <div className="container mx-auto px-6 py-16 md:py-32">
         
         {/* Section Header */}
-        <div className="flex flex-col items-center mb-24 text-center">
+        <div className="flex flex-col items-center mb-16 md:mb-24 text-center">
           <motion.div
             initial={{ opacity: 0, width: 0 }}
             whileInView={{ opacity: 1, width: "100px" }}
             viewport={{ once: true }}
-            className="h-[1px] bg-secondary mb-8"
+            className="h-[1px] bg-secondary mb-6 md:mb-8"
           ></motion.div>
-          <h2 className="text-4xl md:text-5xl font-serif text-primary mb-6">New Acquisitions</h2>
-          <p className="text-gray-500 max-w-xl font-light italic leading-relaxed">
+          <h2 className="text-3xl md:text-5xl font-serif text-primary mb-6">New Acquisitions</h2>
+          <p className="text-gray-500 max-w-xl font-light italic leading-relaxed px-4">
             Recently discovered and meticulously verified for our permanent collection.
           </p>
         </div>
@@ -159,7 +159,7 @@ const Home = () => {
         {loading ? (
           <div className="flex justify-center py-20"><div className="w-12 h-12 border-4 border-gray-100 border-t-secondary rounded-full animate-spin"></div></div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-x-10 md:gap-y-16">
             {books.map((book, index) => (
               <BookCard key={book._id} book={book} />
             ))}
@@ -167,7 +167,7 @@ const Home = () => {
         )}
         
         {/* Editorial Section */}
-        <section className="mt-48 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <section className="mt-24 md:mt-48 grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
            <motion.div 
              initial={{ opacity: 0, x: -50 }}
              whileInView={{ opacity: 1, x: 0 }}
@@ -199,8 +199,8 @@ const Home = () => {
              transition={{ duration: 1 }}
            >
               <span className="text-secondary uppercase tracking-[0.3em] font-bold text-xs mb-6 block">Legacy & Tradition</span>
-              <h2 className="text-4xl md:text-5xl font-serif text-primary mb-8 leading-tight">Beyond a Store. <br/> A Literary Sanctuary.</h2>
-              <p className="text-gray-600 font-light leading-loose mb-10 text-lg italic">
+              <h2 className="text-3xl md:text-5xl font-serif text-primary mb-8 leading-tight">Beyond a Store. <br className="hidden md:block"/> A Literary Sanctuary.</h2>
+              <p className="text-gray-600 font-light leading-loose mb-10 text-base md:text-lg italic">
                 Our mission transcends commerce. We are dedicated to the preservation of intellectual heritage and the discovery of works that challenge, comfort, and inspire.
               </p>
               <div className="space-y-6">
@@ -224,9 +224,9 @@ const Home = () => {
       </div>
       
       {/* Newsletter - Premium Style */}
-      <section className="bg-primary py-32 border-t border-secondary/10">
+      <section className="bg-primary py-20 md:py-32 border-t border-secondary/10">
          <div className="container mx-auto px-6 max-w-4xl text-center">
-            <h2 className="text-4xl font-serif text-white mb-6">Join the Registry</h2>
+            <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Join the Registry</h2>
             <p className="text-gray-400 font-light italic mb-12 max-w-xl mx-auto">
                Receive clandestine updates regarding rare acquisitions and seasonal collections before they reach the general public.
             </p>

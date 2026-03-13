@@ -39,21 +39,21 @@ const Navbar = () => {
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ${scrolled ? 'bg-primary/95 backdrop-blur-md shadow-2xl py-3' : 'bg-transparent py-6'}`}>
       {/* Top Thin Accent */}
       {!scrolled && (
-        <div className="bg-secondary/10 border-b border-secondary/10 text-[10px] text-secondary font-bold text-center py-2 tracking-[0.4em] uppercase absolute -top-10 w-full animate-pulse transition-opacity duration-500">
+        <div className="bg-secondary/10 border-b border-secondary/10 text-[8px] md:text-[10px] text-secondary font-bold text-center py-1.5 md:py-2 tracking-[0.2em] md:tracking-[0.4em] uppercase absolute -top-8 md:-top-10 w-full animate-pulse transition-opacity duration-500">
            Exclusive: Free Global Dispatch for Elite Members
         </div>
       )}
       
-      <div className="container mx-auto px-6 flex justify-between items-center relative gap-8">
+      <div className="container mx-auto px-4 md:px-6 flex justify-between items-center relative gap-4 md:gap-8">
         {/* Brand */}
-        <Link to="/" className="text-2xl md:text-3xl font-serif text-white hover:text-secondary flex items-center gap-4 group transition-all">
+        <Link to="/" className="text-xl md:text-3xl font-serif text-white hover:text-secondary flex items-center gap-2 md:gap-4 group transition-all">
           <motion.div 
             whileHover={{ rotate: 90 }}
-            className="w-10 h-10 border border-secondary/30 flex items-center justify-center text-secondary text-xl font-serif group-hover:border-secondary transition-colors"
+            className="w-8 h-8 md:w-10 md:h-10 border border-secondary/30 flex items-center justify-center text-secondary text-base md:text-xl font-serif group-hover:border-secondary transition-colors"
           >
             G
           </motion.div>
-          <span className="hidden sm:inline-block tracking-tight">Golden<span className="text-secondary italic">Pages</span></span>
+          <span className="inline-block tracking-tight text-lg md:text-2xl">Golden<span className="text-secondary italic">Pages</span></span>
         </Link>
 
         {/* Desktop Search */}

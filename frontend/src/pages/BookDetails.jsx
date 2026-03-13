@@ -78,12 +78,12 @@ const BookDetails = () => {
   if (loading) return <div className="text-center py-48"><div className="w-12 h-12 border-4 border-gray-100 border-t-secondary rounded-full animate-spin mx-auto"></div></div>;
 
   return (
-    <div className="container mx-auto px-6 py-32 max-w-7xl">
-      <Link to="/" className="text-gray-400 hover:text-secondary mb-12 inline-block text-[10px] uppercase tracking-[0.4em] font-bold transition-all flex items-center group">
+    <div className="container mx-auto px-4 md:px-6 py-20 md:py-32 max-w-7xl">
+      <Link to="/" className="text-gray-400 hover:text-secondary mb-8 md:mb-12 inline-block text-[8px] md:text-[10px] uppercase tracking-[0.4em] font-bold transition-all flex items-center group">
         <ChevronLeft size={14} className="mr-2 group-hover:-translate-x-1 transition-transform" /> Back to Collection
       </Link>
       
-      <div className="flex flex-col lg:flex-row gap-24 mb-48 items-center lg:items-start">
+      <div className="flex flex-col lg:flex-row gap-12 md:gap-24 mb-24 md:mb-48 items-center lg:items-start">
         {/* Book Image Cover */}
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
@@ -123,39 +123,39 @@ const BookDetails = () => {
              <span className="h-[1px] w-12 bg-secondary/30"></span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-serif text-primary mb-6 leading-[1.1] tracking-tight">{book.title}</h1>
-          <h2 className="text-2xl text-gray-400 font-light mb-12 font-serif italic">by {book.author}</h2>
+          <h1 className="text-3xl md:text-7xl font-serif text-primary mb-4 md:mb-6 leading-[1.2] md:leading-[1.1] tracking-tight">{book.title}</h1>
+          <h2 className="text-xl md:text-2xl text-gray-400 font-light mb-8 md:mb-12 font-serif italic">by {book.author}</h2>
           
-          <div className="flex items-center gap-6 mb-12 text-sm">
+          <div className="flex items-center gap-4 md:gap-6 mb-8 md:mb-12 text-sm">
             <div className="flex text-secondary gap-1">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} size={14} fill={i < Math.round(book.rating) ? "currentColor" : "none"} stroke="currentColor" />
               ))}
             </div>
-            <span className="text-gray-400 font-light italic">({book.numReviews} Verified Insights)</span>
+            <span className="text-gray-400 font-light italic text-xs">({book.numReviews} Verified Insights)</span>
           </div>
           
-          <p className="text-gray-600 leading-[2.2] mb-16 font-light italic text-lg border-l-2 border-secondary/20 pl-10 max-w-2xl">
+          <p className="text-gray-600 leading-relaxed md:leading-[2.2] mb-12 md:mb-16 font-light italic text-base md:text-lg border-l-2 border-secondary/20 pl-6 md:pl-10 max-w-2xl">
             {book.description || 'This rare edition awaits your discovery. A cornerstone of literary excellence and intellectual depth.'}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-8 items-center pt-12 border-t border-gray-100">
-            <div className="flex flex-col">
+          <div className="flex flex-col sm:flex-row gap-8 items-center pt-8 md:pt-12 border-t border-gray-100">
+            <div className="flex flex-col items-center sm:items-start">
                <span className="text-gray-400 text-[10px] uppercase tracking-widest font-bold mb-1">Exquisite Value</span>
-               <span className="text-4xl font-serif font-bold text-primary">₹{book.price}</span>
+               <span className="text-3xl md:text-4xl font-serif font-bold text-primary">₹{book.price}</span>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto sm:ml-auto">
                <motion.button 
                  whileTap={{ scale: 0.95 }}
                  onClick={() => addToCart(book)}
-                 className="btn-primary py-5 px-16 text-xs uppercase tracking-[0.3em] font-bold shadow-luxury"
+                 className="btn-primary py-4 md:py-5 px-10 md:px-16 text-[10px] md:text-xs uppercase tracking-[0.3em] font-bold shadow-luxury"
                >
                  Add to Bag
                </motion.button>
                <button 
                  onClick={toggleWishlistHandler}
-                 className={`flex items-center gap-2 transition-colors text-[10px] uppercase tracking-widest font-bold border border-gray-100 px-8 py-5 ${isWishlisted ? 'bg-red-50 text-red-500 border-red-100' : 'text-gray-400 hover:text-primary'}`}
+                 className={`flex items-center justify-center gap-2 transition-colors text-[9px] md:text-[10px] uppercase tracking-widest font-bold border border-gray-100 px-6 md:px-8 py-4 md:py-5 ${isWishlisted ? 'bg-red-50 text-red-500 border-red-100' : 'text-gray-400 hover:text-primary'}`}
                >
                  <Heart size={14} className={isWishlisted ? 'fill-red-500' : ''} /> 
                  {isWishlisted ? 'Registry Member' : 'Save to Registry'}

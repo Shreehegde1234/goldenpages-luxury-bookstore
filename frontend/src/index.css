@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply font-sans bg-white text-textPrimary antialiased min-h-screen flex flex-col;
+    @apply font-sans bg-white text-textPrimary antialiased min-h-screen flex flex-col overflow-x-hidden;
     scroll-behavior: smooth;
   }
   
